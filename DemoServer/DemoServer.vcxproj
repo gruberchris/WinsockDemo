@@ -116,6 +116,9 @@
   <ItemGroup>
     <ClCompile Include="DemoServer.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DemoServer.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
