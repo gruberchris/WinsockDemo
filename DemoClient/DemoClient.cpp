@@ -20,8 +20,9 @@ int main()
 	connect(server, reinterpret_cast<SOCKADDR *>(&addr), sizeof(addr));
 	cout << "Connected to server!" << endl;
 
-	char buffer[1024] = { 'h', 'e', 'l', 'l', 'o', '.' };
-	send(server, buffer, sizeof(buffer), 0);
+	const string buffer = "hello.";
+
+	send(server, buffer.c_str(), sizeof(buffer), 0);
 	cout << "Message sent!" << endl;
 
 	closesocket(server);
