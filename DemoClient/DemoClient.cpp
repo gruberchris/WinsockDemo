@@ -4,8 +4,15 @@
 
 using namespace std;
 
-int main()
+int main(int argc, char *argv[])
 {
+	string buffer = "hello.";
+
+	if(argc > 1)
+	{
+		buffer = argv[1];
+	}
+
 	WSADATA wsa_data;
 	SOCKADDR_IN addr;
 
@@ -19,8 +26,6 @@ int main()
 
 	connect(server, reinterpret_cast<SOCKADDR *>(&addr), sizeof(addr));
 	cout << "Connected to server!" << endl;
-
-	const string buffer = "hello.";
 
 	send(server, buffer.c_str(), sizeof(buffer), 0);
 	cout << "Message sent!" << endl;
